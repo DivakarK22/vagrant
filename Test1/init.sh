@@ -2,7 +2,7 @@ cat <<EOF > /etc/sysconfig/network-scripts/ifcfg-eth0
 TYPE=Ethernet
 BOOTPROTO=none
 #Server IP #
-IPADDR=192.168.1.60
+IPADDR=192.168.1.56
 # Subnet #
 PREFIX=24
 # Set default gateway IP #
@@ -19,13 +19,12 @@ NAME=eth0
 # This is system specific and can be created using 'uuidgen eth0' command #
 DEVICE=eth0
 ONBOOT=yes
-UUID="436bd03f-284e-484e-aadc-3ebe9d60ac10"
 EOF
 cat <<EOF > /etc/hostname
-testing
+sensu
 EOF
 cat <<EOF > /etc/hosts
-testing
+sensu
 192.168.1.55 salt
 EOF
 echo "updated all files"

@@ -19,7 +19,6 @@ NAME=eth0
 # This is system specific and can be created using 'uuidgen eth0' command #
 DEVICE=eth0
 ONBOOT=yes
-UUID="436bd03f-284e-484e-aadc-3ebe9d60ac10"
 EOF
 cat <<EOF > /etc/hostname
 jenkins
