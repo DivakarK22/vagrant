@@ -1,0 +1,11 @@
+Ansible/.vagrant/
+Docker/.vagrant/
+Ftp/.vagrant/
+Grafana/.vagrant/
+Jenkins/.vagrant/
+Kubernetes/.vagrant/
+Salt/.vagrant/
+Sensu/.vagrant/
+Test1/.vagrant/
+Testing/.vagrant/
+Ubuntu/.vagrant/
