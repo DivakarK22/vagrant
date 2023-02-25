@@ -20,11 +20,40 @@ NAME=eth0
 DEVICE=eth0
 ONBOOT=yes
 EOF
-
 cat <<EOF > /etc/hostname
 ftp
 EOF
-
+cat <<EOF > /etc/hosts
+ftp
+192.168.1.55 salt
+EOF
 echo "updated all files"
-
+sudo yum install git -y
+cd $HOME
+mkdir git
+cd git
+git clone https://github.com/DivakarK22/scripts.git
+cd scripts/setups/
+sudo bash installsaltMinion.sh
+echo "Installed Salt-minion"
+sudo systemctl restart salt-minion
+cat <<EOF > /etc/ssh/sshd_config
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+SyslogFacility AUTHPRIV
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials no
+UsePAM yes
+X11Forwarding yes
+UseDNS no
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+Subsystem       sftp    /usr/libexec/openssh/sftp-server
+EOF
+echo "all good"
 sudo reboot

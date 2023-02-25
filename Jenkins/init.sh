@@ -56,4 +56,5 @@ AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
 echo "all good"
+echo "vm is up"
 sudo reboot
