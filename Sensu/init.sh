@@ -55,5 +55,19 @@ AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
+sudo yum install wget -y
+sudo yum -y install epel-release
+cd ~ && wget https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_23.3.1-1~centos~7_amd64.rpm
+sudo yum -y install esl-erlang*.rpm
+wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.19/rabbitmq-server-3.8.19-1.el7.noarch.rpm
+sudo yum -y install rabbitmq-server*.rpm
+sudo systemctl start rabbitmq-server.service
+sudo systemctl enable rabbitmq-server.service
+sudo rabbitmq-plugins enable rabbitmq_management
+sudo yum install redis -y
 echo "all good"
+cd $HOME
+cd git/scripts/setups
+sudo bash ruby.sh
+sudo yum install sensu uchiwa -y
 sudo reboot
