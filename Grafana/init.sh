@@ -55,5 +55,6 @@ AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
-echo "all good"
+sudo salt-call state.highstate
+echo "setup done rebooting""
 sudo reboot
