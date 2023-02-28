@@ -24,7 +24,7 @@ cat <<EOF > /etc/hostname
 jenkins
 EOF
 cat <<EOF > /etc/hosts
-192.168.1.53 grafana
+192.168.1.53 jenkins
 192.168.1.55 salt
 EOF
 echo "updated all files"
@@ -55,4 +55,5 @@ AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
+sudo salt-call state.highstate
 sudo reboot
