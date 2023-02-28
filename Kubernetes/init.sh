@@ -24,7 +24,7 @@ cat <<EOF > /etc/hostname
 k8
 EOF
 cat <<EOF > /etc/hosts
-192.168.1.54 kubernetes
+192.168.1.54 k8
 192.168.1.55 salt
 EOF
 echo "updated all files"
