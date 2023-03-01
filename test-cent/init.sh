@@ -2,7 +2,7 @@ cat <<EOF > /etc/sysconfig/network-scripts/ifcfg-eth0
 TYPE=Ethernet
 BOOTPROTO=none
 #Server IP #
-IPADDR=192.168.1.54
+IPADDR=192.168.1.64
 # Subnet #
 PREFIX=24
 # Set default gateway IP #
@@ -24,7 +24,7 @@ cat <<EOF > /etc/hostname
 k8
 EOF
 cat <<EOF > /etc/hosts
-192.168.1.54 k8
+192.168.1.54 test22
 192.168.1.55 salt
 EOF
 echo "updated all files"
