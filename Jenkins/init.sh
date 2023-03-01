@@ -37,6 +37,7 @@ cd scripts/setups/
 sudo bash installsaltMinion.sh
 echo "Installed Salt-minion"
 sudo systemctl restart salt-minion
+sudo bash ruby.sh
 cat <<EOF > /etc/ssh/sshd_config
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
@@ -56,4 +57,7 @@ AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
 sudo salt-call state.highstate
+alias sudo='sudo env PATH=$PATH'
+sudo gem install sensu-plugins-disk-checks
+gem install sensu-plugins-disk-checks
 sudo reboot

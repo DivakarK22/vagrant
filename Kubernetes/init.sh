@@ -59,4 +59,5 @@ EOF
 sudo salt-call state.highstate
 alias sudo='sudo env PATH=$PATH'
 sudo gem install sensu-plugins-disk-checks
+gem install sensu-plugins-disk-checks
 sudo reboot

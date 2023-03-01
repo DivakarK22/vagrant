@@ -28,6 +28,17 @@ sensu
 192.168.1.55 salt
 EOF
 echo "updated all files"
+echo "updated all files"
+sudo yum install git -y
+cd $HOME
+mkdir git
+cd git
+git clone https://github.com/DivakarK22/scripts.git
+cd scripts/setups/
+sudo bash installsaltMinion.sh
+echo "Installed Salt-minion"
+sudo systemctl restart salt-minion
+sudo bash ruby.sh
 cat <<EOF > /etc/ssh/sshd_config
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
@@ -46,4 +57,8 @@ AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
+sudo salt-call state.highstate
+alias sudo='sudo env PATH=$PATH'
+sudo gem install sensu-plugins-disk-checks
+gem install sensu-plugins-disk-checks
 sudo reboot
