@@ -24,7 +24,7 @@ cat <<EOF > /etc/hostname
 ansible
 EOF
 cat <<EOF > /etc/hosts
-ansible
+192.168.1.50 ansible
 192.168.1.55 salt
 EOF
 echo "updated all files"

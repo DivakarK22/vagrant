@@ -57,7 +57,14 @@ AcceptEnv XMODIFIERS
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 EOF
 sudo salt-call state.highstate
+sudo yum remove ruby*
 alias sudo='sudo env PATH=$PATH'
 sudo gem install sensu-plugins-disk-checks
 gem install sensu-plugins-disk-checks
+gem install sensu-plugins-http
+su vagrant
+alias sudo='sudo env PATH=$PATH'
+sudo gem install sensu-plugins-disk-checks
+gem install sensu-plugins-http
+sudo gem install sensu-plugins-http
 sudo reboot
