@@ -24,7 +24,7 @@ cat <<EOF > /etc/hostname
 docker
 EOF
 cat <<EOF > /etc/hosts
-docker
+192.168.1.51 docker
 192.168.1.55 salt
 EOF
 echo "updated all files"
