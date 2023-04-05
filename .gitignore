@@ -11,3 +11,5 @@ Testing/.vagrant/
 Ubuntu/.vagrant/
 test-cent/.vagrant/
 Python/.vagrant
+worker1/.vagrant
+worker2/.vagrant
